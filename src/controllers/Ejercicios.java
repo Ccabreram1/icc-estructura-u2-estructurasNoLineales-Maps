@@ -1,5 +1,6 @@
 package controllers;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class Ejercicios {
@@ -28,8 +29,22 @@ public class Ejercicios {
      * frecuencia.
      */
     public static boolean areAnagrams(String str1, String str2) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (str1.length() != str2.length()) {
+            return false;
+        }else{
+            char[] c1 = str1.toCharArray();
+            char[] c2 = str2.toCharArray();
 
+            Arrays.sort(c1);
+            Arrays.sort(c2);
+
+            if (Arrays.equals(c1, c2)) {
+                return true;
+            }else{
+                return false;
+            }
+        }
+         
     }
 
     /*
