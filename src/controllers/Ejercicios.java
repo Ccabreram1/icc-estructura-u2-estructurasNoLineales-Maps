@@ -63,6 +63,15 @@ public class Ejercicios {
      * Output: null
      */
     public int[] sumatoriaDeDos(int[] nums, int objetivo) {
-        throw new UnsupportedOperationException("Not implemented yet");
-    }
+        HashMap < Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length -1; i++){
+            if (nums[i]+nums[i+1] == objetivo){
+                map.put(i, nums[i]);
+                map.put(i+1, nums[i+1]);
+                return map.keySet().stream().mapToInt(Integer::valueOf).toArray();
+            }
+        }
+        return null;
+
+        }
 }
